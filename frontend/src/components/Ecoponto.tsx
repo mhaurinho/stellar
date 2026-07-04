@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 import { writeClient, unwrap } from "../contract";
 import { ADMIN_ADDRESS } from "../config";
 
@@ -34,6 +35,7 @@ export function Ecoponto({ address }: { address: string }) {
   return (
     <div className="card">
       <h2>Ecoponto</h2>
+      <p className="sub">Valide o descarte em kg e minte a recompensa on-chain.</p>
       {!isAdmin && (
         <p className="warn">
           Atenção: a carteira conectada não é o ecoponto autorizado. O registro
@@ -54,13 +56,15 @@ export function Ecoponto({ address }: { address: string }) {
         placeholder="5"
         inputMode="numeric"
       />
-      <button
+      <motion.button
         className="primary"
         disabled={loading || !citizen || !kg}
         onClick={register}
+        whileHover={{ scale: loading ? 1 : 1.02 }}
+        whileTap={{ scale: 0.98 }}
       >
         {loading ? "Enviando…" : "Registrar e recompensar"}
-      </button>
+      </motion.button>
       {status && <p className="status">{status}</p>}
     </div>
   );

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { readClient } from "../contract";
+import { AnimatedNumber } from "./AnimatedNumber";
 
 export function Comercio({ address }: { address: string }) {
   const [balance, setBalance] = useState<bigint | null>(null);
@@ -15,13 +17,17 @@ export function Comercio({ address }: { address: string }) {
   return (
     <div className="card">
       <h2>Comércio</h2>
+      <p className="sub">Tokens recebidos de cidadãos como pagamento.</p>
       <div className="stats">
-        <div className="stat">
-          <span className="stat-value">
-            {balance === null ? "…" : balance.toString()}
-          </span>
+        <motion.div
+          className="stat"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05 }}
+        >
+          <AnimatedNumber value={balance} />
           <span className="stat-label">tokens RECIC recebidos</span>
-        </div>
+        </motion.div>
       </div>
       <p className="muted">
         Tokens recebidos de cidadãos como pagamento/desconto. Compartilhe seu

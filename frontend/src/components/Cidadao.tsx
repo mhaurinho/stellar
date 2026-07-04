@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { readClient, writeClient, unwrap } from "../contract";
+import { AnimatedNumber } from "./AnimatedNumber";
 
 export function Cidadao({ address }: { address: string }) {
   const [balance, setBalance] = useState<bigint | null>(null);
@@ -48,19 +50,26 @@ export function Cidadao({ address }: { address: string }) {
   return (
     <div className="card">
       <h2>Cidadão</h2>
+      <p className="sub">Seu saldo de recompensas e histórico de reciclagem.</p>
       <div className="stats">
-        <div className="stat">
-          <span className="stat-value">
-            {balance === null ? "…" : balance.toString()}
-          </span>
+        <motion.div
+          className="stat"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05 }}
+        >
+          <AnimatedNumber value={balance} />
           <span className="stat-label">tokens RECIC</span>
-        </div>
-        <div className="stat">
-          <span className="stat-value">
-            {recycled === null ? "…" : recycled.toString()}
-          </span>
+        </motion.div>
+        <motion.div
+          className="stat"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.12 }}
+        >
+          <AnimatedNumber value={recycled} />
           <span className="stat-label">kg reciclados</span>
-        </div>
+        </motion.div>
       </div>
 
       <h3>Resgatar no comércio</h3>
@@ -77,13 +86,15 @@ export function Cidadao({ address }: { address: string }) {
         placeholder="30"
         inputMode="numeric"
       />
-      <button
+      <motion.button
         className="primary"
         disabled={loading || !merchant || !amount}
         onClick={redeem}
+        whileHover={{ scale: loading ? 1 : 1.02 }}
+        whileTap={{ scale: 0.98 }}
       >
         {loading ? "Enviando…" : "Resgatar"}
-      </button>
+      </motion.button>
       {status && <p className="status">{status}</p>}
     </div>
   );
