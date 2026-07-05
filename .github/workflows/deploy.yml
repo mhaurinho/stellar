@@ -29,7 +29,7 @@ jobs:
         env:
           BASE_PATH: /stellar/app/
         run: |
-          npm ci
+          npm install --no-audit --no-fund
           npm run build
 
       - name: Assemble site
