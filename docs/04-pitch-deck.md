@@ -12,7 +12,7 @@
 **No slide:**
 - **ReciclaChain**
 - *Reciclar vira valor na sua cidade*
-- Starbase Hackathon · Smart Cities na Stellar · [time]
+- Starbase Hackathon · Smart Cities na Stellar · Time Connect 3bros
 
 **Roteiro falado:**
 > "E se cada garrafa que você recicla virasse dinheiro no comércio da sua rua? Isso é ReciclaChain."
@@ -121,8 +121,7 @@ Cidadão → Comércio → redeem() → desconto aplicado
 
 **No slide:**
 - **ReciclaChain — reciclar vira valor.**
-- github.com/mhaurinho/stellar · testnet: CDJSWDWI…V4XQR4
-- [nomes / contato]
+- Time Connect 3bros · github.com/mhaurinho/stellar · testnet: CDJSWDWI…V4XQR4
 
 **Roteiro falado:**
 > "ReciclaChain: reciclar vira valor — pra cidade, pro cidadão e pro comércio. Obrigado."
