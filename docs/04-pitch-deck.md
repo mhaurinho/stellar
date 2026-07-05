@@ -134,7 +134,7 @@ Cidadão → Comércio → redeem() → desconto aplicado
 - **"O que dá lastro ao token?"** → O comércio aceita como desconto (convênio municipal), como um vale-troca. Não é especulativo; é utilitário e local.
 - **"Por que blockchain e não um banco de dados?"** → Transparência auditável pelo cidadão e pela prefeitura, e liquidação sem intermediário. O diferencial é a prova pública, não a tecnologia pela tecnologia.
 - **"Escala / custo?"** → Taxa Soroban é fração de centavo por transação; viável para milhões de micro-recompensas.
-- **"Como uma prefeitura adota?"** → Multi-tenant por admin/ecoponto: cada município roda sua instância com sua taxa (tokens/kg).
+- **"Como uma prefeitura adota?"** → Onboarding como tenant na nossa plataforma: cada município tem seu ecoponto/admin e define sua taxa (tokens/kg), sem precisar operar infraestrutura.
 
 ## Checklist do dia da apresentação
 
